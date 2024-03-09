@@ -11,8 +11,22 @@ services:
     build: .
     volumes:
       - .:/application
-      - logs:/logs
       - app-python-site-packages:/usr/local/lib/python3.11/site-packages
-    user: app_user
-    env_file: ./src/config/.env
+    ports:
+      - "8501:8501"
+    links:
+      - database
+    env_file: .env
     command: ["tail", "-f", "/dev/null"]
+  database:
+    image: postgres:15
+    env_file:
+      - .env
+    volumes:
+      - psql-data:/var/lib/postgresql/data
+      - .:/shared
+volumes:
+  app-python-site-packages:
+    driver: local
+  psql-data:
+    driver: local
