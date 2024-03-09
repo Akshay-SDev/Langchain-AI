@@ -1,0 +1,18 @@
+version: '2'
+
+volumes:
+  logs:
+    driver: local
+  app-python-site-packages:
+    driver: local
+
+services:
+  app:
+    build: .
+    volumes:
+      - .:/application
+      - logs:/logs
+      - app-python-site-packages:/usr/local/lib/python3.11/site-packages
+    user: app_user
+    env_file: ./src/config/.env
+    command: ["tail", "-f", "/dev/null"]
