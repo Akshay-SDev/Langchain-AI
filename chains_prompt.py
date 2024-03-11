@@ -7,6 +7,8 @@ from langchain.chains import LLMChain, SequentialChain
 st.title("search about the company")
 input_text = st.text_input("enter the company name here...")
 
+print(os.environ['OPENAI_API_KEY'])
+
 llm = OpenAI(temperature=0.8)
 first_input_prompt = PromptTemplate(
     input_variables=['name'],

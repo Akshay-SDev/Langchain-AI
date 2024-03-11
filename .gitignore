@@ -152,3 +152,4 @@ pylint_report.txt
 
 # removing locale files
 public/locales
+.env
