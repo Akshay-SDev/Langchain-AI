@@ -1,4 +1,4 @@
-cryptography==41.0.3
+cryptography==42.0.4
 botbuilder-integration-aiohttp==4.14.7
 pyadaptivecards==0.1.1
 redis==4.1.4
