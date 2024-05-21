@@ -2,11 +2,11 @@ cryptography==42.0.4
 botbuilder-integration-aiohttp==4.14.7
 pyadaptivecards==0.1.1
 redis==4.1.4
-requests==2.31.0
+requests==2.32.0
 pandas==2.0.0
 openpyxl==3.1.2
 python-dotenv==1.0.0
-gunicorn==20.1.0
+gunicorn==22.0.0
 boto3==1.26.110
 psycopg2-binary==2.9.9
 tabulate==0.9.0
